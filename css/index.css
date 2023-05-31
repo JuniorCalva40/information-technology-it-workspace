@@ -1,0 +1,1425 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mulish:wght@400;600;700;800&display=swap");
+
+:root {
+    /* Colors Palette */
+    /* Neutral Colors */
+    --black-color: #1d1f23;
+    --white-color: #ffffff;
+    --very-dark-gray-color: #51565e;
+    --dark-gray-color: #757a82;
+    --gray-color: #c2c2c2;
+    --light-gray-color: #e6eaf0;
+    --very-light-gray-color: #f4f6f8;
+
+    /* Primary Colors */
+    --primary-blue-color: #4b77c0;
+    --primary-yellow-color: #e4c75b;
+
+    /* Blue Colors */
+    --blue-color-first: #6399ff;
+    --blue-color-second: #4a92f1;
+    --blue-color-third: #63adff;
+    --blue-color-fourth: #63adcb;
+
+    /* Yellow Colors */
+    --yellow-color-first: #ffd45b;
+    --yellow-color-second: #ffc700;
+    --yellow-color-third: #ffde7e;
+    --yellow-color-fourth: #ffc77e;
+    /* End Colors Palette */
+
+    /* Fonts */
+    --bebas-neue-font: "Bebas Neue", cursive;
+    --eina-03-font: "Mulish", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: var(--eina-03-font);
+    scroll-behavior: smooth;
+}
+
+/* !🚨 README 🚨 */
+/* !🚨 PLEASE, USE THE COLORS AND FONTS THAT ARE AT THE ROOT, DON'T WRITE THE COLORS/FONTS MANUALLY 🚨 */
+/* !🚨 README 🚨 */
+/* !🚨 PLEASE, USE CLEAR CLASS NAMES SO EVERYONE CAN UNDERSTAND ALL 🚨 */
+/* !🚨 README 🚨 */
+/* !🚨 THIS COULD SERVE YOU AS GUIDE TO UNDERSTAND HOW TO STYLE YOUR SECTION USING MAX-WIDTH CORRECTLY🚨 */
+.your-section {
+    width: 100%;
+    min-height: 450px;
+    margin-top: -70px;
+    padding: 8rem 2rem;
+    background: var(--white-color);
+    border-radius: 70px 70px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.your-section .max-width {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.your-section .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+}
+/* !🚨 README 🚨 */
+/* !🚨 README 🚨 */
+/* !🚨 README 🚨 */
+/* !🚨 THIS COULD SERVE YOU AS GUIDE TO UNDERSTAND HOW TO STYLE YOUR SECTION 🚨 */
+
+/* !--------------- Starts NAVBAR Styling -------------- */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 99px;
+    padding: 1rem 2rem;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    transition: ease;
+}
+
+.navbar.sticky {
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.12);
+}
+
+.navbar .max-width {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo-uao {
+    width: 6.882rem;
+    height: 6.88rem;
+    position: relative;
+    z-index: 30;
+}
+
+.navbar .menu li,
+.donate li {
+    list-style: none;
+    display: inline-block;
+    z-index: 30;
+}
+
+.navbar .menu li a,
+.donate li a {
+    position: relative;
+    display: block;
+    color: var(--black-color);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 2.5rem;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover {
+    color: var(--primary-blue-color);
+}
+.navbar.sticky .menu li a:hover {
+    color: var(--primary-blue-color);
+}
+.navbar .menu li a:not(.donar-btn)::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    top: 25px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-blue-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.navbar .menu li a:hover::before {
+    transform: scaleX(1);
+}
+
+.navbar .menu li a.active {
+    color: var(--primary-blue-color);
+}
+
+.navbar .menu li a.active::before,
+.navbar .menu li a:hover::before {
+    transform: scaleX(1);
+}
+
+.navbar .donar-btn {
+    width: 120px;
+    background-color: var(--primary-blue-color);
+    color: var(--white-color) !important;
+    padding: 10px;
+    border-radius: 0.8rem;
+    text-align: center;
+    border: 1px solid var(--primary-blue-color);
+    transition: all 0.3s ease;
+}
+.navbar .donar-btn:hover {
+    background-color: var(--blue-color-first);
+    border: 1px solid var(--blue-color-first);
+}
+
+.bars-btn {
+    padding: 10px;
+    color: var(--primary-blue-color);
+    font-size: 2.3rem;
+    cursor: pointer;
+    display: none;
+}
+
+/*switch styles*/
+
+.navbar div.btn-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.navbar div.btn-container i {
+    display: inline-block;
+    position: relative;
+    top: -9px;
+}
+
+.navbar label {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white-color);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.navbar .btn-color-mode-switch {
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+}
+
+.navbar .btn-color-mode-switch > label.btn-color-mode-switch-inner {
+    margin: 0px;
+    width: 92px;
+    height: 40px;
+    background: var(--very-light-gray-color);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    display: block;
+    /*box-shadow: 0px 0px 8px 0px rgba(17, 17, 17, 0.34) inset;*/
+    /* display: block; */
+}
+
+.navbar .btn-color-mode-switch > label.btn-color-mode-switch-inner:before {
+    content: attr(data-on);
+    position: absolute;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark-gray-color);
+    top: 10px;
+    right: 14px;
+}
+
+.navbar .btn-color-mode-switch > label.btn-color-mode-switch-inner:after {
+    content: attr(data-off);
+    font-weight: 700;
+    width: 44px;
+    height: 26px;
+    text-align: center;
+    background: var(--dark-gray-color);
+    border-radius: 5px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 6px -2px #111;
+    padding: 5px 0px;
+}
+
+.navbar .btn-color-mode-switch > .alert {
+    display: none;
+    background: #ff9800;
+    border: none;
+    color: #fff;
+}
+
+.navbar .btn-color-mode-switch input[type="checkbox"] {
+    cursor: pointer;
+    width: 46px;
+    height: 28px;
+    opacity: 0;
+    position: absolute;
+    top: 12px;
+    left: 6px;
+    z-index: 1;
+    margin: 0px;
+    font-size: 1.6rem;
+}
+
+.navbar
+    .btn-color-mode-switch
+    input[type="checkbox"]:checked
+    + label.btn-color-mode-switch-inner {
+    background: var(--very-light-gray-color);
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.navbar
+    .btn-color-mode-switch
+    input[type="checkbox"]:checked
+    + label.btn-color-mode-switch-inner:after {
+    content: attr(data-on);
+    left: 46px;
+    background: var(--dark-gray-color);
+    font-size: 1.6rem;
+}
+
+.navbar
+    .btn-color-mode-switch
+    input[type="checkbox"]:checked
+    + label.btn-color-mode-switch-inner:before {
+    content: attr(data-off);
+    right: auto;
+    left: 14px;
+    font-size: 1.6rem;
+}
+
+.navbar .btn-color-mode-switch input[type="checkbox"]:checked ~ .alert {
+    display: block;
+}
+
+/*mode preview*/
+.navbar .dark-preview {
+    background: #0d0d0d;
+}
+
+.navbar .dark-preview div.btn-container i.fa-sun-o {
+    color: #777;
+}
+
+.navbar .dark-preview div.btn-container i.fa-moon-o {
+    color: #fff;
+    text-shadow: 0px 0px 11px #fff;
+}
+
+.navbar .white-preview {
+    background: #fff;
+}
+
+.navbar .white-preview div.btn-container i.fa-sun-o {
+    color: #ffa500;
+    text-shadow: 0px 0px 16px #ffa500;
+}
+
+.navbar .white-preview div.btn-container i.fa-moon-o {
+    color: #777;
+}
+
+.navbar p.by a {
+    text-decoration: none;
+    color: #000;
+}
+
+.navbar .dark-preview p.by a {
+    color: #777;
+}
+
+.navbar .white-preview p.by a {
+    color: #000;
+}
+
+/* !--------------- Finishes NAVBAR Styling -------------- */
+
+/* !--------------- Starts Home (SECTION 1) Styling -------------- */
+
+/*
+* SECTION 1 STYLING GOES HERE
+* ASSIGNED TO: María Quintana & Jésica Ortiz
+*/
+
+.section1-home {
+    width: 100%;
+    min-height: 450px;
+    margin-top: -70px;
+    padding: 8rem 2rem;
+    background: var(--white-color);
+    border-radius: 70px 70px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../assets/images/home/background-img-big.svg") 70% 65%
+            no-repeat,
+        url("../assets/images/home/background-img-medium.svg") -200px 40% no-repeat,
+        url("../assets/images/home/background-img-small.svg") 85% 100% no-repeat;
+}
+
+.section1-home .max-width {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section1-home .container-home {
+    width: 100%;
+    min-height: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.section1-home .container-home .left {
+    padding: 250px 0 50px;
+    height: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 70px;
+}
+
+.section1-home .container-home .right {
+    max-width: 600px;
+    padding-right: 135px;
+}
+
+.section1-home .left h1 {
+    min-height: max-content;
+    font-family: var(--eina-03-font);
+    font-size: 7.2rem;
+    line-height: 84px;
+    letter-spacing: 0.01em;
+    color: #000;
+}
+
+.section1-home .roller {
+    height: 8.5rem;
+    line-height: 4rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    margin-top: 3%;
+}
+
+.section1-home #spare-time {
+    margin-top: 3%;
+    font-size: 1rem;
+    letter-spacing: 1rem;
+}
+
+.section1-home .roller #rolltext {
+    position: absolute;
+    top: -1rem;
+    animation: slide 7s infinite;
+    font-family: var(--eina-03-font);
+    font-size: 7.2rem;
+    line-height: 95px;
+    letter-spacing: 0.01em;
+
+    background: linear-gradient(93.65deg, #4b77c0 26.71%, #e4c75b 64.37%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@keyframes slide {
+    0% {
+        top: -1rem;
+    }
+
+    20% {
+        top: -1rem;
+    }
+
+    70% {
+        top: -11rem;
+    }
+
+    90% {
+        top: -21rem;
+    }
+}
+
+
+
+.section1-home .donar-btn {
+    width: 124px;
+    background-color: var(--primary-blue-color);
+    color: var(--white-color) !important;
+    padding: 10px;
+    border-radius: 0.8rem;
+    text-align: center;
+    border: 1px solid var(--primary-blue-color);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.section1-home .donar-btn:hover {
+    background-color: var(--blue-color-first);
+    border: 1px solid var(--blue-color-first);
+}
+
+.section1-home .home-img1 {
+    width: 70px;
+    position: relative;
+    z-index: 2;
+    top: 123px;
+    right: 45px;
+    transform: scale(3, 3);
+    animation: T-animation 4.3s ease normal;
+}
+@keyframes T-animation {
+    0% {
+        transform: scaleX(0) scaleY(0) rotate(-80deg);
+    }
+    100% {
+        transform: scaleX(3) scaleY(3) rotate(0deg);
+    }
+}
+.section1-home .home-img2 {
+    width: 125px;
+    margin-top: 160px;
+    position: relative;
+    transform: scale(3, 3);
+    animation: T-animation 4.3s ease normal;
+}
+@keyframes T-animation {
+    0% {
+        transform: scaleX(0) scaleY(0) rotate(-180deg) translateX(-50px)
+            translateY(-50px) skewX(-82deg) skewY(-35deg);
+    }
+    100% {
+        transform: scaleX(3) scaleY(3) rotate(0deg) translateX(0px)
+            translateY(0px) skewX(0deg) skewY(0deg);
+    }
+}
+
+@media screen and (max-width: 994px) {
+    .navbar div.btn-container {
+        margin-top: 5px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    .section1-home .container-home .left {
+        padding: 250px 0 50px;
+        height: 100%;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        gap: 70px;
+    }
+
+    .section1-home .container-home .right {
+        max-width: 420px;
+        padding-right: 80px;
+    }
+    .section1-home .left h1 {
+        background-clip: text;
+        font-size: 5.11rem;
+        line-height: 6rem;
+    }
+
+    .section1-home .left .roller {
+        /* height: 4rem; */
+        line-height: 3.8rem;
+        margin-top: 1%;
+    }
+
+    .section1-home #spare-time {
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+    }
+
+    .section1-home .roller #rolltext {
+        font-size: 5.11rem;
+        animation: slide-mob 7s infinite;
+    }
+
+    .section1-home .home-img1 {
+        width: 50px;
+        position: relative;
+        z-index: 2;
+        top: 85px;
+        right: 30px;
+        transform: scale(3, 3);
+        animation: T-animation 4.3s ease normal;
+    }
+    .section1-home .home-img2 {
+        width: 75px;
+        margin-top: 50px;
+        position: relative;
+        transform: scale(3, 3);
+        animation: T-animation 4.3s ease normal;
+    }
+}
+
+@media screen and (max-width: 689px) {
+    .section1-home {
+        margin-top: -200px;
+        margin-bottom: 100px;
+    }
+    .section1-home .container-home {
+        justify-content: space-around;
+    }
+
+    .section1-home .container-home .right {
+        max-width: 420px;
+        margin-left: 90px;
+    }
+}
+
+/* !--------------- Finishes Home (SECTION 1) Styling -------------- */
+
+/* !--------------- Starts About Us (SECTION 2) Styling -------------- */
+
+/*
+* SECTION 2 STYLING GOES HERE
+* ASSIGNED TO: Maximiliano Luján & Dana Sabrina Armella
+*/
+.section2-about-us {
+    width: 100%;
+    min-height: 887px;
+    background-image: url("../assets/images/about-us/ukrania-country-background.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section2-about-us .max-width {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.section2-about-us .container-aboutus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+}
+.section2-about-us .container-aboutus .subtitle {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 400;
+    text-align: center;
+    font-family: var(--bebas-neue-font);
+}
+.section2-about-us .container-aboutus h2 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 52px;
+    text-align: center;
+    font-family: var(--bebas-neue-font);
+}
+.section2-about-us .container-aboutus h2 span {
+    color: var(--primary-blue-color);
+}
+.section2-about-us .container-texts-images {
+    display: flex;
+    font-family: var(--eina-03-font);
+    max-width: 80%;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.section2-about-us .text-black {
+    font-size: 18px;
+    line-height: 27px;
+}
+.section2-about-us .text-black span {
+    color: var(--blue-color-first);
+}
+.section2-about-us .text-black-bold {
+    font-weight: 700;
+}
+.section2-about-us .container-buttons {
+    font-family: var(--eina-03-font);
+    display: flex;
+    gap: 2rem;
+}
+.section2-about-us .button-donate {
+    background-color: var(--primary-blue-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 1.5rem;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+.section2-about-us .button-donate {
+    width: 124px;
+    background-color: var(--primary-blue-color);
+    color: var(--white-color) !important;
+    padding: 10px;
+    border-radius: 0.8rem;
+    text-align: center;
+    border: 1px solid var(--primary-blue-color);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.section2-about-us .button-donate:hover {
+    background-color: var(--blue-color-first);
+    border: 1px solid var(--blue-color-first);
+}
+
+.section2-about-us .button-see-more {
+    border: none;
+    text-decoration: none;
+    color: #4a92f1;
+    background: none;
+    font-family: "Mulish";
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+.section2-about-us .Container-texts-buttons {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+}
+.section2-about-us .container-texts-images img {
+    max-width: 100%;
+}
+
+/* !--------------- Finishes About Us (SECTION 2) Styling -------------- */
+
+/* !--------------- Starts Get Involved (SECTION 3) Styling -------------- */
+
+/*
+* SECTION 3 STYLING GOES HERE
+* ASSIGNED TO: Andrea Lucía Canevaro & Harold Osorio
+*/
+.section3-get-involved {
+    width: 100%;
+    min-height: 450px;
+    padding: 0rem 2rem 4rem;
+    background: var(--white-color);
+    border-radius: 70px 70px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3-get-involved .max-width {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3-get-involved .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 22px;
+    font-family: "Bebas Neue";
+    font-style: normal;
+}
+
+.section3-get-involved .container_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 30px;
+    font-size: 25px;
+    line-height: 100px;
+}
+.section3-get-involved .container_header span {
+    color: #4b77c0;
+}
+.section3-get-involved .container_header a {
+    text-decoration: none;
+    color: #4a92f1;
+    font-family: "Mulish";
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section3-get-involved .container_cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-around;
+    gap: 22px;
+    font-family: "Mulish";
+}
+
+.section3-get-involved .container_cards-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 320px;
+    padding: 17px;
+    box-shadow: rgba(75, 119, 192, 0.2) 0px 7px 29px 0px,rgba(75, 119, 192, 0.2) 0px 7px 29px 0px,rgba(75, 119, 192, 0.2) 0px 7px 29px 0px;
+    border-radius: 6%;
+}
+.section3-get-involved .container_cards-3 .cards-title {
+    color: #1d1f23;
+    font-size: 15px;
+    font-weight: 1000;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.section3-get-involved .container_cards-3 .cards-description {
+    color: #707070;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.section3-get-involved .container_cards-3 .button1 {
+    font-family: "Mulish";
+    font-size: 1.6rem;
+    height: 45px;
+    padding: 10px;
+    font-weight: 800;
+    background-color: white;
+    color: var(--primary-blue-color);
+    border: 2px solid var(--primary-blue-color);
+    border-radius: 0.8rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.section3-get-involved .container_cards-3 .button1:hover {
+    border: 2px solid var(--blue-color-first);
+    color: var(--blue-color-first);
+}
+.section3-get-involved .container_cards-3 .button2 {
+    width: 124px;
+    background-color: var(--primary-blue-color);
+    color: var(--white-color) !important;
+    padding: 10px;
+    border-radius: 0.8rem;
+    text-align: center;
+    border: 1px solid var(--primary-blue-color);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.section3-get-involved .container_cards-3 .button2:hover {
+    background-color: var(--blue-color-first);
+    border: 1px solid var(--blue-color-first);
+}
+.section3-get-involved .container_cards-3 .cards-socialmedia {
+    align-items: center;
+    display: flex;
+}
+.section3-get-involved .container_cards-3 .social-media-icons {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: white;
+    color: var(--primary-blue-color);
+    border: 2px solid var(--primary-blue-color);
+    border-radius: 0.8rem;
+    align-items: center;
+}
+/* !--------------- Finishes Get Involved (SECTION 3) Styling -------------- */
+
+/* !--------------- Starts Stories (SECTION 4) Styling -------------- */
+
+/*
+* SECTION 4 STYLING GOES HERE
+* ASSIGNED TO: Gabriel Vázquez & Nadia Florencia Maldonado
+*/
+.section4-stories {
+    min-height: 568px;
+    /* padding: 8rem 2rem 1rem; */
+}
+
+.section4-stories .max-width .container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+.section4-stories h2 {
+    font-family: "Bebas Neue";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 63px;
+    color: #4b77c0;
+    display: flex;
+    align-items: center;
+}
+.section4-stories h2 + p {
+    font-family: "Mulish";
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px !important;
+    height: 350px !important;
+    filter: blur(4px);
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.swiper-slide-active {
+    filter: blur(0px) !important;
+}
+
+.slide-carusel-swiper-uao {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 10px;
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+.description-slide-swiper {
+    position: relative;
+    font-family: "Mulish";
+    color: white;
+    width: 100%;
+    height: 116px;
+    z-index: 999;
+    margin-top: -140px;
+    padding: 20px;
+    background: linear-gradient(
+        97.62deg,
+        rgba(176, 176, 176, 0.51) 1.35%,
+        rgba(140, 140, 140, 0) 120.18%
+    );
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    backdrop-filter: blur(10.255px);
+    border-radius: 10px;
+}
+
+.description-slide-swiper h3 {
+    font-size: 20px;
+    text-align: center;
+}
+.description-slide-swiper p {
+    padding: 10px;
+    font-size: 13px;
+}
+
+/* !--------------- Finishes Stories (SECTION 4) Styling -------------- */
+
+/* !--------------- Starts Home (SECTION 5) Styling -------------- */
+
+/*
+* SECTION 5 STYLING GOES HERE
+* ASSIGNED TO: Junior Alejandro Calva Pizarro
+*/
+.section5-contact {
+    width: 100%;
+    padding: 12rem 0 2rem;
+}
+
+.section5-contact .max-width {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: auto auto;
+}
+.section5-contact .max-width .background-contact {
+    width: 100%;
+    min-height: 400px;
+    padding: 8rem 2rem;
+    background-image: url("../assets/images/contact/background-img-ukranian-people.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section5-contact .contact-container {
+    max-width: 740px;
+    min-height: 224px;
+    padding: 20px;
+    background: var(--white-color);
+    opacity: 0.9;
+    text-align: center;
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section5-contact .contact-container p {
+    color: var(--blue-color-first);
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-family: var(--bebas-neue-font);
+    font-weight: 400;
+    text-align: center;
+}
+
+.section5-contact .contact-container .btn-contact {
+    width: 124px;
+    background-color: var(--primary-blue-color);
+    color: var(--white-color) !important;
+    padding: 10px;
+    border-radius: 0.8rem;
+    text-align: center;
+    border: 1px solid var(--primary-blue-color);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.section5-contact .contact-container .btn-contact:hover {
+    background-color: var(--blue-color-first);
+    border: 1px solid var(--blue-color-first);
+}
+
+/* !--------------- Finishes Home (SECTION 5) Styling -------------- */
+
+/* !--------------- Starts PARTNERS (SECTION 6) Styling -------------- */
+
+/*
+* SECTION 6 STYLING GOES HERE
+* ASSIGNED TO: Sabrina Demetrio
+*/
+
+.section6-partners {
+    min-height: 550px;
+    background: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section6-partners .max-width {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section6-partners .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.section6-partners .title-partners {
+    font-family: var(--bebas-neue-font);
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--gray-color);
+    line-height: 0em;
+    margin: 10px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 3.8rem;
+}
+
+.section6-partners .title-partners2 {
+    display: none;
+}
+
+.section6-partners .title-partners .title-line {
+    background: var(--white-color);
+    padding: 0 10px;
+}
+
+.section6-partners .color-title {
+    color: var(--primary-blue-color);
+}
+
+.section6-partners .subcontainer {
+    display: flex;
+    background: var(--white-color);
+    width: 100%;
+}
+
+.section6-partners .slider {
+    height: 202px;
+    position: relative;
+    max-width: 1200px;
+
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+.section6-partners .slider::before,
+.section6-partners .slider::after {
+    position: absolute;
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    content: "";
+    height: 100%;
+    width: 10%;
+    z-index: 2;
+    pointer-events: none;
+}
+.section6-partners .slider::before {
+    left: 0;
+    top: 0;
+}
+.section6-partners .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+/*  IMPORTANT CODE BELOW */
+
+.section6-partners .slide-track2 {
+    width: calc(205px * 18);
+    display: flex;
+    animation: scroll2 18s linear infinite;
+    justify-content: space-between;
+}
+
+.section6-partners .slide {
+    width: 205px;
+    height: 60px;
+
+    display: grid;
+    place-items: center;
+    place-content: center;
+    transition: 0.6s;
+    cursor: pointer;
+}
+.section6-partners .slide:hover {
+    transform: scale(0.8);
+}
+
+.section6-partners .slide .image-slider {
+    max-width: 180px;
+    -webkit-filter: grayscale(95%);
+    filter: grayscale(95%);
+}
+
+@keyframes scroll2 {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(calc(-205px * 6));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section6-partners .container {
+        gap: 20px;
+    }
+    .section6-partners .slide .image-slider {
+        max-width: 95px;
+    }
+    .section6-partners .slide-track2 {
+        width: calc(100px * 18);
+    }
+
+    .section6-partners .slide {
+        width: 100px;
+    }
+
+    @keyframes scroll2 {
+        0% {
+            transform: translateX(0px);
+        }
+        100% {
+            transform: translateX(calc(-100px * 6));
+        }
+    }
+}
+
+/* !--------------- Finishes PARTNERS (SECTION 6) Styling -------------- */
+
+/* !--------------- Starts FOOTER Styling -------------- */
+
+/*
+* FOOTER STYLING GOES HERE
+* ASSIGNED TO: Rafael Rivera
+*/
+
+.footer {
+    min-height: 300px;
+    box-shadow: 1px 1px 88px #4b77c024;
+    width: 100%;
+    background: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .max-width {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .container {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+}
+
+.footer .container .top {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer .container .top .subcontainer {
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.9rem;
+}
+
+.footer .container .top .subcontainer .icons {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .container .top .subcontainer .phone-link {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.footer .container .top .flex {
+    font-size: 2.4rem;
+    line-height: 24px;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.footer .container .line {
+    margin-top: 80px;
+    width: 100%;
+    position: absolute;
+    border-bottom: 1px solid var(--gray-color);
+}
+
+.footer .container .bottom {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0px;
+}
+
+/* !--------------- Finishes FOOTER Styling -------------- */
+
+@media (max-width: 994px) {
+    .menu-btn {
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active::before {
+        content: "\f00d";
+    }
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background-color: var(--white-color);
+        text-align: center;
+        padding-top: 8rem;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active {
+        left: 0;
+    }
+    .navbar .menu li {
+        display: block;
+    }
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 2rem 0;
+        font-size: 2.5rem;
+    }
+    .navbar .menu li a:not(.ingresar-btn, .donar-btn)::before {
+        top: 32px;
+    }
+
+    .section6-partners {
+        margin: 10%;
+    }
+    .section6-partners .title-partners {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    /*SECTION ABOUT US MEDYA QUERY*/
+
+    .section5-contact .contact-container p {
+        font-size: 3.3rem;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 861px) {
+    .section6-partners {
+        min-height: 350px;
+        background: var(--white-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .section6-partners .container {
+        gap: 20px;
+    }
+    .section6-partners .title-partners {
+        display: none;
+    }
+    .section6-partners .title-partners2 {
+        width: 100%;
+        font-size: 5.1rem;
+        font-family: var(--bebas-neue-font);
+        text-align: center;
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        color: var(--primary-blue-color);
+    }
+}
+
+@media (max-width: 643px) {
+    .section6-partners .title-partners2 {
+        font-size: 4.8rem;
+    }
+    .footer .container .top {
+        justify-content: space-around;
+    }
+
+    .footer .container .line {
+        margin-top: 150px;
+    }
+}
+
+@media screen and (max-width: 391px) {
+    .navbar div.btn-container {
+        margin-top: 18px;
+    }
+    .section6-partners .title-partners2 {
+        font-size: 3.8rem;
+    }
+}
+
+@media screen and (max-width: 388px) {
+    .navbar div.btn-container {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 387px) {
+    .footer .container .line {
+        margin-top: 240px;
+    }
+}
